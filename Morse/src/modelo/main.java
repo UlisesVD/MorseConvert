@@ -13,6 +13,9 @@ public class main {
         char[] alfabeto = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
         String[] alfabetoMorse = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...",
                                    "-","..-","...-",".--","-..-","-.--","--.."};
+        char[] numeros = {'0','1','2','3','4','5','6','7','8','9'};
+        String[] numerosMorse = {"-----",".----","..---","...--","....-",".....","-....","--...","---..","----."};
+        
         int op = 1;
         do{
             System.out.println("¿En que desea escribir su expresion?\n1)Texto\n2)Morse\n3)Salir");
@@ -25,9 +28,13 @@ public class main {
                     String cadena = sc2.nextLine().toLowerCase();
                     for (int i = 0; i < cadena.length(); i++) {
                         for (int j = 0; j < alfabeto.length; j++) {
-                            if (cadena.charAt(i) == alfabeto[j]) {
-                            convercion += alfabetoMorse[j]+" ";
-                           }
+                            if (cadena.charAt(i) == alfabeto[j] ) {
+                                convercion += alfabetoMorse[j]+" ";
+                            }
+                            
+                            if ((j <= 9) && (cadena.charAt(i) == numeros[j])) {
+                                convercion += numerosMorse[j]+" ";
+                            }
                         }
                     }
         
@@ -48,10 +55,13 @@ public class main {
                                 if (codigo[i].equals(alfabetoMorse[j])) {
                                     convercion += alfabeto[j];
                                 }
+                                if (j < 10 && codigo[i].equals(numerosMorse[j])) {
+                                    convercion += numeros[j];
+                                }                                
                             }
                         }
                     }
-                    System.out.println("///////////Su cadena en morse/////////////\n"+convercion+"\n///////////////////////");
+                    System.out.println("///////////Su cadena en texto/////////////\n"+convercion+"\n///////////////////////");
                 break;
                 case 3: 
                     System.out.println("Vuelva pronto");
