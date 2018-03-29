@@ -1,8 +1,6 @@
 # MorseConvert
 Ulises Vera Delgado
 uli_vra@hotmail.com
-
-
 Intrucciones:
 1) Corra el programa 
 2) Eliga una opcion del menu 
